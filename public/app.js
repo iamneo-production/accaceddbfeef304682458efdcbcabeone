@@ -45,7 +45,7 @@ const checkWin = () => {
     for(const condition of conditions){
         const [a,b,c] = condition;
         if(cells[a] && cells[a] === cells[b] && cells[a] === cells[c]){
-            result.textContent = `Player ${cells[a]} wins`;
+            result.textContent = `Player ${cells[a]} won`;
             disableButtons();
             return true;
         }
@@ -96,8 +96,10 @@ const resetGame = () => {
     btns.forEach(btn => {
         btn.textContent = '';
         btn.disabled = false;
-        btn.style.backgroundColor = '';
-    })
+        btn.style.backgroundColor = '#000';
+        btn.style.cursor = 'pointer'
+    });
+    result.textContent = "Player X's turn";
 };
 
 btns.forEach((btn, i) => {
