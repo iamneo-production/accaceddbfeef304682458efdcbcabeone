@@ -17,19 +17,19 @@
   </header>
   <div class="box">
     <div class="row">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
+      <div class="btn"></div>
+      <div class="btn"></div>
+      <div class="btn"></div>
     </div>
     <div class="row">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
+      <div class="btn"></div>
+      <div class="btn"></div>
+      <div class="btn"></div>
     </div>
     <div class="row">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
+      <div class="btn"></div>
+      <div class="btn"></div>
+      <div class="btn"></div>
     </div>
     <div class="result-container">
       <p class="result">Player X's turn</p>
@@ -38,14 +38,14 @@
   <div class="reset">
     <button id="reset-button">Reset</button>
   </div>
-  <script>
+  <!-- <script>
     let currentPlayer = 'X';
     const board = ['', '', '', '', '', '', '', '', ''];
     let gameOver = false;
 
-    function handleMove(cell, index) {
-      if (!cell.textContent && !gameOver) {
-        cell.textContent = currentPlayer;
+    function handleMove(btn, index) {
+      if (!btn.textContent && !gameOver) {
+        btn.textContent = currentPlayer;
         board[index] = currentPlayer;
 
         if (checkWin() || checkDraw()) {
@@ -76,13 +76,13 @@
     }
 
     function checkDraw() {
-      return board.every(cell => cell !== '');
+      return board.every(btn => btn !== '');
     }
 
     function displayResult() {
       const resultContainer = document.querySelector('.result-container');
       if (checkWin()) {
-        resultContainer.textContent = `Player ${currentPlayer} wins!`;
+        resultContainer.textContent = `Player ${currentPlayer} won!`;
       } else {
         resultContainer.textContent = "It's a draw!";
       }
@@ -93,23 +93,23 @@
       resultContainer.textContent = `Player ${currentPlayer}'s turn`;
     }
 
-    const cells = document.querySelectorAll('.cell');
-    cells.forEach((cell, index) => {
-      cell.addEventListener('click', () => {
-        handleMove(cell, index);
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        handleMove(btn, index);
       });
     });
 
     const resetButton = document.getElementById('reset-button');
     resetButton.addEventListener('click', () => {
-      cells.forEach(cell => (cell.textContent = ''));
+      btns.forEach(btn => (btn.textContent = ''));
       board.fill('');
       currentPlayer = 'X';
       gameOver = false;
       updateTurnText();
       document.querySelector('.result-container').textContent = "Let's play!";
     });
-  </script>
+  </script> -->
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 // Initial game state
-let cells = ['', '', '', '', '', '', '', '', ''];
+let btns = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let result = document.querySelector('.result');
 let btns = document.querySelectorAll('.btn');
@@ -19,7 +19,7 @@ const ticTacToe = (element, index) => {
     // Your game logic here
     if(!element.textContent && !checkWin() && !checkDraw()){
         element.textContent = currentPlayer;
-        cells[index] = currentPlayer;
+        btns[index] = currentPlayer;
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         updateTurnText();
     }
@@ -37,15 +37,15 @@ const ticTacToe = (element, index) => {
     // Your code to display the current player's turn
     // ...
 
-    // Your code to handle button and cell interactions
+    // Your code to handle button and btn interactions
     // ...
 };
 
 const checkWin = () => {
     for(const condition of conditions){
         const [a,b,c] = condition;
-        if(cells[a] && cells[a] === cells[b] && cells[a] === cells[c]){
-            result.textContent = `Player ${cells[a]} won`;
+        if(btns[a] && btns[a] === btns[b] && btns[a] === btns[c]){
+            result.textContent = `Player ${btns[a]} won`;
             disableButtons();
             return true;
         }
@@ -56,12 +56,12 @@ const checkWin = () => {
     **Part 2: Reset Function (Add your code here)**
 
     1. Implement a new function that resets the game to its initial state.
-    2. Ensure the 'cells', 'btns', and 'currentPlayer' variables are reset.
+    2. Ensure the 'btns', 'btns', and 'currentPlayer' variables are reset.
     3. Update the 'result' element to indicate the current player's turn.
     4. Re-enable all buttons for a new game.
     */
 const checkDraw = () => {
-    if(cells.every(cell => cell !== '')){
+    if(btns.every(btn => btn !== '')){
         result.textContent = "It's a draw!";
         disableButtons();
         return true;
@@ -91,7 +91,7 @@ const resetGame = () => {
 
     // Your code to re-enable buttons
     // ...
-    cells = ['','','','','','','','',''];
+    btns = ['','','','','','','','',''];
     currentPlayer = 'X';
     btns.forEach(btn => {
         btn.textContent = '';
@@ -121,9 +121,9 @@ document.querySelector('#reset').addEventListener('click', resetGame);
 // const board = ['', '', '', '', '', '', '', '', ''];
 // let gameOver = false;
 
-// function handleMove(cell, index) {
-//     if (!cell.textContent && !gameOver) {
-//         cell.textContent = currentPlayer;
+// function handleMove(btn, index) {
+//     if (!btn.textContent && !gameOver) {
+//         btn.textContent = currentPlayer;
 //         board[index] = currentPlayer;
 
 //         if (checkWin() || checkDraw()) {
@@ -154,7 +154,7 @@ document.querySelector('#reset').addEventListener('click', resetGame);
 // }
 
 // function checkDraw() {
-//     return board.every(cell => cell !== '');
+//     return board.every(btn => btn !== '');
 // }
 
 // function displayResult() {
@@ -171,16 +171,16 @@ document.querySelector('#reset').addEventListener('click', resetGame);
 //     resultContainer.textContent = `Player ${currentPlayer}'s turn`;
 // }
 
-// const cells = document.querySelectorAll('.cell');
-// cells.forEach((cell, index) => {
-//     cell.addEventListener('click', () => {
-//         handleMove(cell, index);
+// const btns = document.querySelectorAll('.btn');
+// btns.forEach((btn, index) => {
+//     btn.addEventListener('click', () => {
+//         handleMove(btn, index);
 //     });
 // });
 
 // const resetButton = document.getElementById('reset-button');
 // resetButton.addEventListener('click', () => {
-//     cells.forEach(cell => (cell.textContent = ''));
+//     btns.forEach(btn => (btn.textContent = ''));
 //     board.fill('');
 //     currentPlayer = 'X';
 //     gameOver = false;

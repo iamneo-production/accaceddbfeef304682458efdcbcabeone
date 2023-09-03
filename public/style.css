@@ -29,7 +29,7 @@ header{
   justify-content: center;
 }
 
-.cell{
+.btn{
   width: 75px;
   height: 75px;
   margin: 5px;
@@ -44,11 +44,11 @@ header{
   cursor: pointer;
 }
 
-.cell:hover{
+.btn:hover{
   background-color: rgba(255,255,255,1);
 }
 
-.cell:disabled{
+.btn:disabled{
   background-color: #f0f0f0;
   cursor: no-drop;
 }
