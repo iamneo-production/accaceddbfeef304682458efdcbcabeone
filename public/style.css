@@ -25,5 +25,58 @@ header{
 }
 
 .row{
-  display: ;
+  display: flex;
+  justify-content: center;
+}
+
+.cell{
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cell:hover{
+  background-color: rgba(255,255,255,1);
+}
+
+.cell:disabled{
+  background-color: #f0f0f0;
+  cursor: no-drop;
+}
+
+.result-container{
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid #000;
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.reset{
+  text-align: center;
+}
+
+#reset-button{
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#reset-button:hover{
+  background-color: #fff;
+  color: #000;
 }
