@@ -17,7 +17,12 @@ let conditions = [
 // Function to handle player moves
 const ticTacToe = (element, index) => {
     // Your game logic here
-
+    if(!element.textContent && !checkWin() && !checkDraw()){
+        element.textContent = currentPlayer;
+        cells[index] = currentPlayer;
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        updateTurnText();
+    }
     /*
     **Part 1: Winning Conditions (Add your code here)**
 
@@ -44,6 +49,18 @@ const ticTacToe = (element, index) => {
     3. Update the 'result' element to indicate the current player's turn.
     4. Re-enable all buttons for a new game.
     */
+const checkDraw () => {
+    if(cells.every(cell => cell !== '')){
+        result.textContent = "It's a draw!";
+        disableButtons();
+        return true;
+    }
+    return false;
+};
+
+const updateTurnText = () => {
+    result.textContent = ``
+}
 
 // Function to reset the game
 const resetGame = () => {
