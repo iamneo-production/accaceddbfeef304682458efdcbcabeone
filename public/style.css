@@ -1,17 +1,17 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600;700&display=swap"); */
 
-body {
+/* body { 
     background-image: url("https://cdn.pixabay.com/photo/2018/03/17/19/36/connection-3234929_1280.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     font-family: "Radio Canada", sans-serif;
-  }
+  }*/
   
 /* Enter your styling here */
 
-header{
+/*header{
   text-align: center;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
@@ -79,4 +79,104 @@ header{
 #reset-button:hover{
   background-color: #fff;
   color: #000;
+}*/
+
+/* style.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600;700&display=swap");
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2018/03/17/19/36/connection-3234929_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "Radio Canada", sans-serif;
+  }
+h1{
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 50px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 35px;
+}
+.row {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.cell {
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.cell.disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.btn {
+  margin-left: 700px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  width: 75px;
+  height: 75px;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  text-align: center;
+  text-shadow: 1px 1px 3px #fff;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgba(200, 255, 60, 1);
+  cursor: pointer;
+}
+.btn:disabled {
+  color: black;
+  cursor: not-allowed;
+}
+.result-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #fff;
+  text-align: center;
+  max-width: 200px;
+  margin: 20px auto;
+}
+.result {
+  color: white;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 25px;
+}
+#reset{
+  text-align: center;
+}
+#reset .btn{
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+}
+#reset:hover {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
 }
